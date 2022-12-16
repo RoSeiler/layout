@@ -1,0 +1,71 @@
+  *:before, *:after {
+  box-sizing: inherit;
+  }
+  
+  Este código de CSS aplica la propiedad ´box-sizing: inherit´ a todos los elementos :before y :after en 
+  la página. Esto significa que cualquier elemento que tenga un contenido generado utilizando 
+  estas pseudo-clases heredará el valor de la propiedad box-sizing de su elemento padre. 
+  Esto puede ser útil para asegurarse de que el tamaño de todos los elementos generados sea consistente 
+  con el de su elemento padre.
+--------------------------------------------------------
+  margin:0;
+
+  margin de forma vertical: si tengo 2 elementos y los quiero unir y cada elemento tiene 1 rem de margin, 
+  colapsan y quedan oegados por 1 rem de margin, no se suma como con el padding (1 rem + 1 rem = 2 rem)
+  en margin vertical (horizontal funciona como el padding -ok-) 1 + 1 =1, se fusionan.
+--------------------------------------------------------------------
+margin: 0 auto; 
+
+formato para centrar el texto. Recordar:::::: El 0 es top and bottom y el auto es left and right
+
+No le pongas margen al top y al bottom y, todo el espacio que sobre del ancho (más arriba establecimos un ancho de 400px)
+repartilo a los costados en partes iguales (auto)
+
+Así centramos un bloque al centro de la pág.
+----------------------------------------------------------
+flex-flow: row nowrap;
+
+flex-flow combina las propiedades flex-direction y flex-wrap. 
+La propiedad flex-direction determina la dirección en la que se colocan los elementos dentro de un 
+contenedor flex. La propiedad flex-wrap determina si los elementos de un contenedor flex deben ajustarse 
+en una sola línea o si deben ajustarse en varias líneas.
+En el caso de flex-flow: row nowrap;, esto indica que los elementos se colocarán en una sola línea: 
+uno detrás de otro en lugar de uno debajo de otro. Nowrap indica que los elementos no se ajustarán en 
+varias líneas, sino que se mostrarán en una sola línea, incluso si esto significa que se desborden 
+fuera del contenedor flex.
+  --------------------------------------------------
+flex-flow: row wrap;, 
+Los elementos se colocarán en la dirección de las filas y que se ajustarán en varias líneas si es necesario.
+Se colocarán uno detrás de otro en lugar de uno debajo de otro, pero si no caben en una sola línea, 
+se ajustarán en varias líneas para evitar desbordarse fuera del contenedor flex.
+Esta propiedad es útil cuando se quiere mostrar un conjunto de elementos en una sola dirección, 
+pero se quiere evitar que se desborden fuera del contenedor flex. En lugar de desbordarse, los elementos 
+se ajustarán en varias líneas para que se puedan mostrar completamente dentro del contenedor flex.
+-------------------------------------------------------
+gap
+propiedad de espaciado que se puede utilizar para establecer un espacio entre los elementos de un 
+contenedor
+--------------------------------------------------------
+flex-basis: 100%; 
+tiene q ver con el ancho. Si le damos una medida al width (25%)va a ser fija (ej, va a ser siempre 25%). 
+Ahora si decimos 25% al flex basis es distinto: estamos diciendo el 25% en nuestro flex basis. Puese ser
+un poco más, un poco menos, dependiendo de lo q vaya pasando en nuestro flex box.
+---------------------------------
+FONT AWESOME
+copiar este link en el head para usar los iconos en el html:
+<script src="https://kit.fontawesome.com/fad186c743.js" crossorigin="anonymous"></script>
+-----------------------------------------------------------
+gradient
+La pag de Jen no me funcionó: https://cssgradient.io/
+Usé: https://www.colorzilla.com/gradient-editor/ y cambié los colores claros en el CSS
+-------------------------------------------------------
+Grid
+puede solapar 2 elementos uno encima del otro. Flexbox no, lo máx q hace es pegarlos uno al lado del otro.
+
+grid-template-columns: 1fr 1fr;
+tenemos 2 columnas y quiero una fracción del ancho de la pantalla cada uno (grid me hace el cálculo)
+--------------------------------------------------
+order: 2
+hacemos que un elemento se muestre segundo
+-----------------------------------------------------
+

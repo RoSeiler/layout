@@ -1,0 +1,256 @@
+/* variables declared here - these are the colors for our pages, as well as the font stacks and sizes. */
+:root {
+  --darkest:#1a1c20;
+    --grey:#323640;
+    --lgrey:#42454b;
+    --lightgrey: #adafb3;
+    --almostwhite: #bfc2c7;
+    --font-size: 1.3rem;
+    --mono: "Oxygen mono", monospace;
+    --sans: Oxygen, sans-serif;
+}
+/* border box model: https://css-tricks.com/box-sizing/ */
+html {
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0; /* estas 2 propiedades en 0 nos soluciona el problema de q el section no ocupaba todo el ancho de la vista*/
+    margin: 0;
+    font-family: var(--sans);
+    background-color: var(--darkest);
+    color:  var(--lightgrey);
+    font-size: var(--font-size);
+}
+h1,h2,h3 {
+    margin: 0; 
+}
+a {
+    color: var(--almostwhite);
+}
+a:hover {
+color: rgb(239, 232, 232);
+text-decoration: none;
+}  
+img {
+  width: 100%;
+}
+/*background-color divs*/
+.section-gray {
+  background-color: #323640;
+}
+.section-lgray {
+  background-color: var(--lgrey);
+
+}
+.gradient {
+background: -moz-linear-gradient(left,  rgba(0,0,0,0.65) 0%, rgba(241, 241, 241, 0.854) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  rgba(0,0,0,0.65) 0%,rgba(244, 242, 242, 0.97) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  rgba(0,0,0,0.65) 0%,rgba(255, 255, 255, 0.909) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+height: 2px;
+}
+/*intro styles*/
+
+#intro {
+padding: 4rem 1rem 10rem 1rem;
+max-width: 1200px;
+margin: 0 auto;
+}
+#intro p {
+    font-size: 1rem;
+    line-height: 1.5; /*establecemos la altura de la linea de p y va sin unidad de medida para q de esta forma sea proporcional al resto del texto*/
+}
+#intro .name {
+    font-family: var(--mono);
+    color: var(--almostwhite);
+}
+.name span {
+    font-family: var(--sans);
+    font-size: 4rem;
+    color: rgb(239, 232, 232);
+    display: block;
+}
+#intro h2 {
+    font-size: 4rem;
+    color: var(--almostwhite);
+}
+/* contact section */
+
+#contact {
+    width: 400px;
+    text-align: center;
+    margin: 0 auto; /*formato para centrar el texto*/
+    padding: 3rem 0;
+}
+
+#contact p:last-child { /*last child porque es el ultimo parrafo de mi html*/
+    margin-top: 3rem;
+}
+/* navigation */
+nav {
+    font-family: var(--mono);
+    font-size: 80%;
+    padding: 1rem;
+  }
+  
+  nav h1 a {
+    font-family: var(--sans);
+  }
+  
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem; 
+  }
+  nav li:first-child { /*para subir el nombre un renglon. my name es el primer item de la lista adentro de nav de ahi el first-child*/
+    flex-basis: 100%; /*100% hace que automaticamente empuje el resto de lso elementos a la linea de abajo*/
+    text-align: center;
+  }
+  nav [class*="fa-"] {
+    font-size: 150%;
+    color: var(--lightgrey);
+  }
+  nav [class*="fa-"]:hover {
+    color: rgb(239, 232, 232);
+  }
+  nav a {
+    color: var(--lightgrey);
+    text-decoration: none;
+    display: block;/*para q toda el area de a sea clickeable*/
+  }
+  nav a:hover {
+    color:rgb(239, 232, 232);
+  }
+  .button {
+    background-color: var(--lightgrey);
+    color: var(--grey);
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-family: var(--mono);
+    text-decoration: none;
+  }
+  .button:hover {
+    background-color: rgb(239, 232, 232);
+    color: var(--darkest);
+  }
+
+  /* footer section */
+footer {
+    text-align: center;
+    padding: 4rem 0;
+}
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 2rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 3rem;
+    font-size: 3rem;
+}
+/*Projects section*/
+#projects {
+  padding: 4rem; /*para q no quede pegado a los bordes*/  
+}
+#projects h2 {
+  font-size: 2.5rem;
+  color:  rgb(239, 232, 232);
+  margin-bottom: calc(2.5rem * 1.5);
+  padding-top: 2rem;
+}
+#projects h3 {
+  color: var(--darkest);
+}
+#projects h4 {
+  font-size: 1rem;
+  font-family:var(--mono);
+  margin: 0;
+}
+.dark-box {
+  background-color: var(--darkest);
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  line-height: 1.5; /*espaciado entre lineas*/
+}
+#projects ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+  font-size: 1rem;
+}
+#projects img {
+  margin: 2rem 0 4rem 0;
+  border-left: 1px solid var(--almostwhite);
+  border-top: 1px solid var(--almostwhite);
+  border-radius: 25px;
+  padding: 1rem;
+}
+
+
+
+
+
+@media (min-width: 800px) {
+  article {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+  }
+  #projects {
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+  #projects img {
+      grid-column: 1/6;
+      grid-row: 1/2;
+  }
+  .text {
+      grid-column: 5/11;
+      grid-row: 1/2;
+      order: 2;
+      text-align: right;
+  }
+  #projects ul {
+      justify-content: flex-end;
+  }
+  #projects .reverse .text {
+      grid-column: 1/7;
+      order: 2;
+      text-align: left;
+  }
+  #projects .reverse img {
+      grid-column: 6/11;
+      grid-row: 1/2;
+  }
+  #projects .reverse ul {
+      justify-content: flex-start;
+  }
+}
+@media (min-width: 850px) {
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  nav li:first-child {
+    flex-basis: auto;
+    text-align: left;
+    margin-right: auto;
+  }
+}
